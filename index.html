@@ -22,6 +22,41 @@
 </style>
 </head>
 <body>
+<div id="gateOverlay" style="position:fixed;inset:0;z-index:99999;background:#f7f7f5;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;font:14px -apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-serif;">
+  <div style="width:100%;max-width:320px;text-align:center;">
+    <div style="width:64px;height:64px;margin:0 auto 18px;border-radius:16px;background:#1f5fa8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.35rem;font-weight:800;letter-spacing:-0.03em;">신체</div>
+    <h1 style="margin:0 0 6px;font-size:1.05rem;font-weight:800;color:#141413;letter-spacing:-0.02em;">신체손해사정사 학습노트</h1>
+    <p style="margin:0 0 22px;font-size:0.8rem;color:#6b6a66;line-height:1.5;">비공개 자료입니다.<br>4자리 비밀번호를 입력하세요.</p>
+    <input id="gatePin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off"
+      style="width:100%;box-sizing:border-box;padding:14px 12px;font-size:1.5rem;text-align:center;letter-spacing:0.5em;text-indent:0.5em;border:1.5px solid #dcdbd6;border-radius:12px;background:#fff;color:#141413;outline:none;-webkit-appearance:none;">
+    <div id="gateMsg" style="min-height:18px;margin-top:10px;font-size:0.75rem;font-weight:700;color:#c0392b;"></div>
+    <button id="gateBtn" style="margin-top:6px;width:100%;padding:12px;font-size:0.9rem;font-weight:700;color:#fff;background:#1f5fa8;border:none;border-radius:12px;cursor:pointer;font-family:inherit;">열기</button>
+  </div>
+</div>
+<script>
+(function(){
+  var K="shsjs-gate-v1", H=221893399;
+  function hash(s){var x=5381;for(var i=0;i<s.length;i++){x=((x*33)^s.charCodeAt(i))>>>0;}return x;}
+  var ov=document.getElementById("gateOverlay"),
+      pin=document.getElementById("gatePin"),
+      msg=document.getElementById("gateMsg"),
+      btn=document.getElementById("gateBtn");
+  function open(){ try{localStorage.setItem(K,"1");}catch(e){} ov.parentNode.removeChild(ov); document.documentElement.style.overflow=""; }
+  var ok=false; try{ ok = localStorage.getItem(K)==="1"; }catch(e){}
+  if(ok){ open(); return; }
+  document.documentElement.style.overflow="hidden";
+  function tryPin(){
+    var v=(pin.value||"").trim();
+    if(hash("shsjs::"+v)===H){ open(); }
+    else { msg.textContent="비밀번호가 맞지 않습니다."; pin.value=""; pin.focus(); }
+  }
+  pin.addEventListener("input",function(){ msg.textContent=""; if(pin.value.length===4) tryPin(); });
+  pin.addEventListener("keydown",function(e){ if(e.key==="Enter") tryPin(); });
+  btn.addEventListener("click",tryPin);
+  setTimeout(function(){ try{pin.focus();}catch(e){} },100);
+})();
+</script>
+
 <title>신체손해사정사 학습노트</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">

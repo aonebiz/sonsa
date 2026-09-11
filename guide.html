@@ -91,6 +91,41 @@
 </style>
 </head>
 <body>
+<div id="gateOverlay" style="position:fixed;inset:0;z-index:99999;background:#f7f7f5;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;font:14px -apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-serif;">
+  <div style="width:100%;max-width:320px;text-align:center;">
+    <div style="width:64px;height:64px;margin:0 auto 18px;border-radius:16px;background:#1f5fa8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.35rem;font-weight:800;letter-spacing:-0.03em;">신체</div>
+    <h1 style="margin:0 0 6px;font-size:1.05rem;font-weight:800;color:#141413;letter-spacing:-0.02em;">신체손해사정사 학습노트</h1>
+    <p style="margin:0 0 22px;font-size:0.8rem;color:#6b6a66;line-height:1.5;">비공개 자료입니다.<br>4자리 비밀번호를 입력하세요.</p>
+    <input id="gatePin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off"
+      style="width:100%;box-sizing:border-box;padding:14px 12px;font-size:1.5rem;text-align:center;letter-spacing:0.5em;text-indent:0.5em;border:1.5px solid #dcdbd6;border-radius:12px;background:#fff;color:#141413;outline:none;-webkit-appearance:none;">
+    <div id="gateMsg" style="min-height:18px;margin-top:10px;font-size:0.75rem;font-weight:700;color:#c0392b;"></div>
+    <button id="gateBtn" style="margin-top:6px;width:100%;padding:12px;font-size:0.9rem;font-weight:700;color:#fff;background:#1f5fa8;border:none;border-radius:12px;cursor:pointer;font-family:inherit;">열기</button>
+  </div>
+</div>
+<script>
+(function(){
+  var K="shsjs-gate-v1", H=221893399;
+  function hash(s){var x=5381;for(var i=0;i<s.length;i++){x=((x*33)^s.charCodeAt(i))>>>0;}return x;}
+  var ov=document.getElementById("gateOverlay"),
+      pin=document.getElementById("gatePin"),
+      msg=document.getElementById("gateMsg"),
+      btn=document.getElementById("gateBtn");
+  function open(){ try{localStorage.setItem(K,"1");}catch(e){} ov.parentNode.removeChild(ov); document.documentElement.style.overflow=""; }
+  var ok=false; try{ ok = localStorage.getItem(K)==="1"; }catch(e){}
+  if(ok){ open(); return; }
+  document.documentElement.style.overflow="hidden";
+  function tryPin(){
+    var v=(pin.value||"").trim();
+    if(hash("shsjs::"+v)===H){ open(); }
+    else { msg.textContent="비밀번호가 맞지 않습니다."; pin.value=""; pin.focus(); }
+  }
+  pin.addEventListener("input",function(){ msg.textContent=""; if(pin.value.length===4) tryPin(); });
+  pin.addEventListener("keydown",function(e){ if(e.key==="Enter") tryPin(); });
+  btn.addEventListener("click",tryPin);
+  setTimeout(function(){ try{pin.focus();}catch(e){} },100);
+})();
+</script>
+
 <div class="wrap">
 
   <header class="top">
@@ -109,10 +144,19 @@
       <div><b>424</b><span>예상문제</span></div>
       <div><b>293</b><span>기출문제</span></div>
     </div>
-    <p style="margin-bottom:0">설치할 것도, 가입할 것도, 로그인할 것도 없습니다. <b>주소만 열면 바로 씁니다.</b></p>
+    <p style="margin-bottom:0">가입도 로그인도 없습니다. <b>주소를 열고 비밀번호 4자리만 넣으면 바로 씁니다.</b></p>
   </div>
 
   <a class="url" href="./">https://aonebiz.github.io/sonsa/</a>
+
+  <div class="ok">
+    <b>비밀번호는 <span style="font-size:1.15em;letter-spacing:0.15em">0829</span> 입니다.</b><br>
+    주소를 열면 숫자 입력창이 먼저 뜹니다. 네 번째 숫자를 넣는 순간 자동으로 열립니다.<br>
+    한 번 넣으면 <b>그 기기에서는 다시 묻지 않습니다.</b> (기기를 바꾸면 그 기기에서 한 번 더 넣습니다)
+  </div>
+  <div class="warn">
+    공유받은 분만 보시라고 걸어둔 <b>최소한의 잠금</b>입니다. 정식 보안이 아니니 <b>링크와 비밀번호를 단톡방 등에 퍼뜨리지 말아 주세요.</b>
+  </div>
 
   <h2>1. 설치 — 홈 화면에 올려두기</h2>
   <p>그냥 즐겨찾기로 쓰셔도 됩니다. 다만 홈 화면에 올려두면 <b>앱처럼 아이콘으로 바로 열리고 주소창 없이 전체화면</b>으로 뜹니다. 매일 볼 거라면 해두는 편이 낫습니다.</p>
@@ -185,14 +229,16 @@
   <p>암기카드의 <b>안다/모른다</b>와 예상문제의 체크는 자동으로 저장됩니다. <b>홈</b> 탭에서 과목별 진행률을 볼 수 있습니다.</p>
   <div class="warn">
     기록은 <b>그 기기의 브라우저에만</b> 저장됩니다. 아이폰에서 체크한 것이 PC로 넘어가지 않습니다.<br>
-    브라우저 <b>인터넷 사용 기록·쿠키를 삭제</b>하면 진도도 함께 지워집니다. 시크릿 모드에서도 저장되지 않습니다.
+    브라우저 <b>인터넷 사용 기록·쿠키를 삭제</b>하면 진도도 함께 지워지고, 비밀번호도 다시 묻습니다. 시크릿 모드에서도 저장되지 않습니다.
   </div>
 
   <h2>5. 자주 묻는 것</h2>
   <div class="scroller">
   <table>
     <tr><th>질문</th><th>답</th></tr>
-    <tr><td>로그인해야 하나요?</td><td>아니요. 가입도 로그인도 없습니다.</td></tr>
+    <tr><td>로그인해야 하나요?</td><td>아니요. 가입도 로그인도 없고, 비밀번호 <b>0829</b> 네 자리만 넣으면 됩니다.</td></tr>
+    <tr><td>비밀번호를 매번 넣나요?</td><td>아니요. 기기마다 처음 한 번만 넣습니다. 단, 브라우저 기록을 지우거나 시크릿 모드로 열면 다시 묻습니다.</td></tr>
+    <tr><td>입력창이 안 넘어가요</td><td>숫자 네 자리를 정확히 넣었는지 확인하세요. 자판이 한글이면 숫자가 안 들어갑니다.</td></tr>
     <tr><td>돈이 드나요?</td><td>전혀 들지 않습니다.</td></tr>
     <tr><td>데이터를 많이 쓰나요?</td><td>처음 열 때 약 1.4MB를 받고, 이후에는 거의 쓰지 않습니다.</td></tr>
     <tr><td>비행기 모드에서도 되나요?</td><td>한 번 연 뒤에는 대개 열립니다. 다만 보장되지는 않으니 미리 한 번 열어두세요.</td></tr>
