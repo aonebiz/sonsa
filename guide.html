@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>사용설명서 — 신체손해사정사 학습노트</title>
+<meta name="description" content="신체손해사정사 학습노트 설치 가이드와 사용설명서">
+<meta name="theme-color" content="#1f5fa8">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --page:#f7f7f5; --surface:#ffffff; --sunk:#f0efec;
+    --ink:#141413; --ink2:#54534e; --muted:#8a8880;
+    --line:#e3e2dc; --border:rgba(20,20,19,0.10);
+    --accent:#1f5fa8; --accent-soft:#e4eefb; --accent-ink:#144a86;
+    --ok:#1a7f4b; --ok-soft:#e2f2e9;
+    --am:#a8710a; --am-soft:#fbf0d9;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--page); color:var(--ink);
+    font-family:"Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:0 18px 64px;}
+
+  header.top{padding:26px 0 18px; border-bottom:1px solid var(--line); margin-bottom:26px;}
+  header.top h1{margin:0 0 6px; font-size:1.3rem; font-weight:800; letter-spacing:-0.02em;}
+  header.top p{margin:0; color:var(--muted); font-size:0.84rem;}
+  header.top a.back{display:inline-block; margin-top:12px; font-size:0.8rem; font-weight:700; color:var(--accent); text-decoration:none;}
+
+  h2{
+    margin:34px 0 12px; font-size:1.02rem; font-weight:800; letter-spacing:-0.01em;
+    padding-left:11px; border-left:3px solid var(--accent);
+  }
+  h3{margin:20px 0 8px; font-size:0.92rem; font-weight:700;}
+  p{margin:8px 0;}
+
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 18px; margin:12px 0;}
+
+  ol,ul{margin:8px 0; padding-left:20px;}
+  li{margin:5px 0;}
+
+  .scroller{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:12px 0;}
+  table{border-collapse:collapse; width:100%; min-width:420px; font-size:0.86rem; background:var(--surface);}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top;}
+  th{background:var(--sunk); font-weight:700; white-space:nowrap;}
+
+  .tip{background:var(--accent-soft); border-radius:10px; padding:13px 15px; margin:12px 0; font-size:0.88rem; color:var(--accent-ink);}
+  .tip .h{display:block; font-weight:800; margin-bottom:4px;}
+  .warn{background:var(--am-soft); border-radius:10px; padding:13px 15px; margin:12px 0; font-size:0.88rem; color:#7a5207;}
+  .ok{background:var(--ok-soft); border-radius:10px; padding:13px 15px; margin:12px 0; font-size:0.88rem; color:#13603a;}
+
+  .url{
+    display:block; background:var(--ink); color:#fff; border-radius:10px;
+    padding:13px 16px; margin:14px 0; font-size:0.95rem; font-weight:700;
+    text-align:center; text-decoration:none; word-break:break-all;
+  }
+
+  .steps{counter-reset:s; list-style:none; padding:0; margin:12px 0;}
+  .steps li{
+    counter-increment:s; position:relative; padding:12px 14px 12px 46px;
+    background:var(--surface); border:1px solid var(--border); border-radius:10px; margin:8px 0;
+  }
+  .steps li::before{
+    content:counter(s); position:absolute; left:13px; top:12px;
+    width:22px; height:22px; border-radius:50%; background:var(--accent); color:#fff;
+    font-size:0.76rem; font-weight:800; display:flex; align-items:center; justify-content:center;
+  }
+  .steps li b{color:var(--ink);}
+
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0;}
+  @media(max-width:560px){ .grid{grid-template-columns:1fr;} }
+  .grid .box{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 16px;}
+  .grid .box h3{margin-top:0;}
+
+  .stat{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0;}
+  .stat div{
+    flex:1 1 120px; background:var(--surface); border:1px solid var(--border);
+    border-radius:10px; padding:12px 14px; text-align:center;
+  }
+  .stat b{display:block; font-size:1.25rem; font-weight:800; color:var(--accent); letter-spacing:-0.02em;}
+  .stat span{font-size:0.76rem; color:var(--muted); font-weight:600;}
+
+  kbd{background:var(--sunk); border:1px solid var(--line); border-radius:5px; padding:1px 6px; font-size:0.82rem; font-family:inherit; font-weight:700;}
+  footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--line); font-size:0.8rem; color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>신체손해사정사 학습노트 — 사용설명서</h1>
+    <p>설치하는 법과 쓰는 법. 2분이면 다 읽습니다.</p>
+    <a class="back" href="./">← 학습노트로 돌아가기</a>
+  </header>
+
+  <h2>0. 이게 뭔가요</h2>
+  <div class="card">
+    <p>신체손해사정사 <b>2차 시험</b>을 준비하는 웹 학습노트입니다. 최근 9개년(41~49회) 기출을 분석해 4과목을 각 10단원으로 정리했습니다.</p>
+    <div class="stat">
+      <div><b>4</b><span>과목</span></div>
+      <div><b>40</b><span>단원</span></div>
+      <div><b>808</b><span>암기카드</span></div>
+      <div><b>424</b><span>예상문제</span></div>
+      <div><b>293</b><span>기출문제</span></div>
+    </div>
+    <p style="margin-bottom:0">설치할 것도, 가입할 것도, 로그인할 것도 없습니다. <b>주소만 열면 바로 씁니다.</b></p>
+  </div>
+
+  <a class="url" href="./">https://aonebiz.github.io/sonsa/</a>
+
+  <h2>1. 설치 — 홈 화면에 올려두기</h2>
+  <p>그냥 즐겨찾기로 쓰셔도 됩니다. 다만 홈 화면에 올려두면 <b>앱처럼 아이콘으로 바로 열리고 주소창 없이 전체화면</b>으로 뜹니다. 매일 볼 거라면 해두는 편이 낫습니다.</p>
+
+  <div class="grid">
+    <div class="box">
+      <h3>📱 아이폰 · 아이패드</h3>
+      <ol class="steps" style="margin-top:8px">
+        <li><b>사파리</b>로 위 주소를 엽니다</li>
+        <li>아래쪽 <b>공유 버튼</b>(⬆ 네모에 화살표)을 누릅니다</li>
+        <li>메뉴를 내려 <b>홈 화면에 추가</b>를 누릅니다</li>
+        <li>오른쪽 위 <b>추가</b>를 누르면 끝입니다</li>
+      </ol>
+      <div class="warn" style="margin-bottom:0"><b>반드시 사파리로</b> 여세요. 아이폰에서 크롬으로 열면 이 메뉴가 나오지 않습니다.</div>
+    </div>
+
+    <div class="box">
+      <h3>📱 갤럭시 · 안드로이드</h3>
+      <ol class="steps" style="margin-top:8px">
+        <li><b>크롬</b> 또는 <b>삼성 인터넷</b>으로 주소를 엽니다</li>
+        <li>화면 아래나 주소창에 <b>앱 설치</b> 안내가 뜨면 누릅니다</li>
+        <li>안 뜨면 우측 상단 <b>⋮ 메뉴</b>를 엽니다</li>
+        <li><b>홈 화면에 추가</b>(또는 앱 설치)를 누릅니다</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="ok">설치가 끝나면 홈 화면에 <b>남색 아이콘</b>이 생기고 이름은 <b>신체손해사정</b>으로 들어갑니다.</div>
+
+  <h3>💻 PC</h3>
+  <p>주소를 열고 <kbd>Ctrl</kbd>+<kbd>D</kbd>로 즐겨찾기에 넣으면 충분합니다. 크롬이라면 주소창 오른쪽의 설치 아이콘(⊕)을 눌러 앱으로 만들 수도 있습니다.</p>
+
+  <h2>2. 화면 구조</h2>
+  <p>맨 위에 <b>과목 탭</b>이 있습니다. 과목을 고르면 <b>0~9단원</b>이 나오고, 단원을 고르면 아래와 같은 <b>모드 탭</b>이 나타납니다.</p>
+
+  <div class="scroller">
+  <table>
+    <tr><th>모드</th><th>무엇을 하는 곳인가</th></tr>
+    <tr><td><b>교재</b></td><td>본문입니다. 표와 도해로 정리돼 있고, 초록 상자는 <b>암기법</b>, 파란 상자는 <b>왜 그런가</b>를 풀어 쓴 설명, 노란 상자는 <b>함정 경고</b>입니다.</td></tr>
+    <tr><td><b>계산</b></td><td>기출 계산문제를 단계별로 푸는 곳입니다. 단계마다 식과 금액과 근거가 붙어 있고, 끝에 <b>자주 틀리는 곳</b>이 정리돼 있습니다. <b>여기가 합격을 가릅니다.</b> (계산이 있는 단원에만 나타납니다)</td></tr>
+    <tr><td><b>암기카드</b></td><td>카드를 눌러 뒤집습니다. <b>안다 / 모른다</b>를 체크하면 진도에 반영됩니다.</td></tr>
+    <tr><td><b>예상문제</b></td><td>주관식 문제입니다. 먼저 스스로 답을 써보고 <b>모범답안</b>을 펼쳐 채점하세요.</td></tr>
+    <tr><td><b>기출문제</b></td><td>41~49회에 실제로 나온 문항과 모범답안입니다.</td></tr>
+  </table>
+  </div>
+
+  <h3>배지 읽는 법</h3>
+  <div class="scroller">
+  <table>
+    <tr><th>표시</th><th>뜻</th></tr>
+    <tr><td>★★★ 41·43·45회</td><td>단원·절의 <b>출제 빈도</b>. 별이 많을수록 자주 나왔고, 숫자는 실제 출제 회차입니다.</td></tr>
+    <tr><td>★★★ 기출가능성 높음</td><td>예상문제의 <b>중요도</b>. 시간이 없으면 ★★★부터 푸세요.</td></tr>
+    <tr><td>★ 가 붙은 단원명</td><td>그 과목에서 <b>배점이 가장 큰 단원</b>입니다.</td></tr>
+  </table>
+  </div>
+
+  <h2>3. 공부 순서</h2>
+  <ol class="steps">
+    <li><b>0단원부터 시작하세요.</b> 각 과목의 0단원에는 출제 빈도표, 용어 정리, 답안 쓰는 법이 들어 있습니다. 여기를 건너뛰면 나머지가 안 읽힙니다.</li>
+    <li><b>교재를 한 번 훑고 암기카드로 넘어가세요.</b> 이해보다 정리가 점수를 만듭니다.</li>
+    <li><b>예상문제는 반드시 손으로 써보고</b> 모범답안을 펴세요. 눈으로만 보면 시험장에서 손이 안 나갑니다.</li>
+    <li><b>★ 표시된 계산 단원은 두 번 도세요.</b> 4교시 4단원, 2교시 4단원, 3교시 7단원입니다.</li>
+    <li><b>9단원은 시험 전날에 봅니다.</b> 빈출 주제, 외울 숫자, 자주 하는 실수가 모여 있습니다.</li>
+  </ol>
+
+  <div class="tip"><span class="h">과목 순서 제안</span>
+    배점과 난이도를 함께 보면 <b>4교시 자동차보험 → 2교시 책임·근재 → 1교시 의학이론 → 3교시 제3보험</b> 순이 무난합니다. 자동차보험이 가장 익숙하고 구조가 명확해서 첫 과목으로 좋습니다.</div>
+
+  <h2>4. 진도 기록</h2>
+  <p>암기카드의 <b>안다/모른다</b>와 예상문제의 체크는 자동으로 저장됩니다. <b>홈</b> 탭에서 과목별 진행률을 볼 수 있습니다.</p>
+  <div class="warn">
+    기록은 <b>그 기기의 브라우저에만</b> 저장됩니다. 아이폰에서 체크한 것이 PC로 넘어가지 않습니다.<br>
+    브라우저 <b>인터넷 사용 기록·쿠키를 삭제</b>하면 진도도 함께 지워집니다. 시크릿 모드에서도 저장되지 않습니다.
+  </div>
+
+  <h2>5. 자주 묻는 것</h2>
+  <div class="scroller">
+  <table>
+    <tr><th>질문</th><th>답</th></tr>
+    <tr><td>로그인해야 하나요?</td><td>아니요. 가입도 로그인도 없습니다.</td></tr>
+    <tr><td>돈이 드나요?</td><td>전혀 들지 않습니다.</td></tr>
+    <tr><td>데이터를 많이 쓰나요?</td><td>처음 열 때 약 1.4MB를 받고, 이후에는 거의 쓰지 않습니다.</td></tr>
+    <tr><td>비행기 모드에서도 되나요?</td><td>한 번 연 뒤에는 대개 열립니다. 다만 보장되지는 않으니 미리 한 번 열어두세요.</td></tr>
+    <tr><td>내용이 바뀌면?</td><td>주소가 그대로라 새로고침만 하면 최신 내용이 나옵니다.</td></tr>
+    <tr><td>화면이 깨져 보여요</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>(아이폰은 앱을 껐다 켜기)로 새로고침하세요.</td></tr>
+  </table>
+  </div>
+
+  <h2>6. 내용에 관한 주의</h2>
+  <div class="warn" style="font-size:0.9rem">
+    <b>수치는 원문 대조가 필요합니다.</b> 약관의 지급기준, 보상한도, 사고부담금, 장해 지급률 같은 금액과 비율은 법령과 약관 개정으로 바뀝니다.<br>
+    이 노트의 수치는 41~49회 기출과 모범답안에서 실제로 적용된 값을 옮긴 것입니다. 시험 직전에는 <b>최신 표준약관·시행령 원문</b>으로 반드시 확인하세요.
+  </div>
+  <p>또한 이 노트는 <b>합격을 위한 요약</b>입니다. 기본서를 대체하지는 않습니다. 빈도가 낮아 덜어낸 부분이 있습니다.</p>
+
+  <a class="url" href="./">학습노트 열기 →</a>
+
+  <footer>
+    신체손해사정사 2차 학습노트 · 41~49회 기출 기반<br>
+    문의나 오류 제보는 공유해 주신 분에게 알려주세요.
+  </footer>
+
+</div>
+</body>
+</html>
