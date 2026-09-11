@@ -289,6 +289,23 @@
   /* ---- 답안 템플릿 ---- */
   .tmpl{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin:12px 0; font-size:0.86rem; color:var(--ink2); white-space:pre-wrap; line-height:1.75;}
   .tmpl b{color:var(--ink);}
+
+.dg{margin:16px 0;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;}
+.dg .dgt{font-weight:800;font-size:0.86rem;margin-bottom:8px;}
+.dg svg,.qfig svg{display:block;width:100%;height:auto;max-width:560px;margin:0 auto;font-family:inherit;}
+.dg figcaption{font-size:0.74rem;color:var(--muted);margin-top:8px;line-height:1.65;}
+.qfig{margin:16px 0;padding:14px;border:1px solid var(--line);border-radius:10px;background:#fff;}
+.qfig .qrd{display:inline-block;font-size:0.66rem;font-weight:800;color:#a8412a;background:#fdece7;border:1px solid #e0b3a4;border-radius:9px;padding:2px 8px;}
+.qfig .qt{font-weight:800;font-size:0.92rem;margin:8px 0 6px;}
+.qfig .qq{font-size:0.8rem;line-height:1.8;background:var(--page);border-left:3px solid var(--accent);padding:9px 12px;border-radius:3px;margin-bottom:10px;}
+.qfig .qq .hint{color:var(--muted);font-size:0.74rem;}
+.qfig .ansbox{margin-top:12px;border-top:1px solid var(--line);padding-top:10px;}
+.qfig summary{cursor:pointer;font-weight:800;font-size:0.8rem;color:var(--accent);}
+.qfig .ansb{font-size:0.8rem;line-height:1.85;margin-top:8px;background:#f1f8f2;border:1px solid #cfe4d2;border-radius:6px;padding:10px 12px;}
+.qfig .ansb .sub{color:#4a6b50;font-size:0.74rem;}
+.qfig .asvg{margin-top:10px;border:1px solid var(--line);border-radius:6px;padding:8px;}
+.qfig .qtip{font-size:0.78rem;line-height:1.75;margin-top:8px;background:#f2f6fb;border:1px solid #cddcee;border-radius:6px;padding:10px 12px;}
+.qfig .qtip .h{display:block;font-weight:800;font-size:0.7rem;margin-bottom:3px;}
 </style>
 
 <div class="wrap">
@@ -3875,7 +3892,57 @@ const MED = {
        <tr><td><b>관절내 골절</b></td><td>골절선이 관절면까지 들어간 것. 외상성 관절염으로 이어진다</td></tr>
        <tr><td><b>무혈성 괴사</b> AVN</td><td>혈액공급이 끊겨 뼈가 죽는 것. 대퇴골두·주상골·거골이 3대 호발부위</td></tr>
        </table></div>
-       <div class="warn">용어 문제는 배점이 작아 보이지만, 용어를 모르면 <b>문제 자체를 못 읽는다</b>. 이 표를 먼저 외운 뒤 1단원으로 간다.</div>`}
+       <div class="warn">용어 문제는 배점이 작아 보이지만, 용어를 모르면 <b>문제 자체를 못 읽는다</b>. 이 표를 먼저 외운 뒤 1단원으로 간다.</div><figure class="dg"><div class="dgt">전신 골격 지도 — 부위 이름부터 맞춘다</div><svg viewBox="0 0 520 470" role="img" aria-label="전신 골격 부위 명칭">
+ <g fill="#eef2f7" stroke="#2b2b2a" stroke-width="1.3" stroke-linejoin="round">
+  <ellipse cx="150" cy="42" rx="25" ry="29"/>
+  <rect x="142" y="70" width="16" height="22" rx="4"/>
+  <path d="M108 96 q42 -9 84 0 l-3 7 q-39 -8 -78 0 z"/>
+  <path d="M114 108 q36 -10 72 0 l6 72 q-42 13 -84 0 z"/>
+  <path d="M126 116 q24 -6 48 0 M124 132 q26 -6 52 0 M123 148 q27 -6 54 0 M123 164 q27 -6 54 0" fill="none" stroke-width="0.9" opacity=".55"/>
+  <rect x="141" y="182" width="18" height="40" rx="4"/>
+  <path d="M112 224 q38 -10 76 0 q-4 26 -14 38 q-24 6 -48 0 q-10 -12 -14 -38 z"/>
+  <path d="M110 104 L120 106 L102 178 L92 175 Z"/>
+  <path d="M100 182 L108 184 L96 252 L88 250 Z"/>
+  <path d="M92 183 L99 185 L90 252 L83 251 Z"/>
+  <ellipse cx="88" cy="266" rx="10" ry="13"/>
+  <path d="M190 104 L180 106 L198 178 L208 175 Z"/>
+  <path d="M200 182 L192 184 L204 252 L212 250 Z"/>
+  <path d="M208 183 L201 185 L210 252 L217 251 Z"/>
+  <ellipse cx="212" cy="266" rx="10" ry="13"/>
+  <path d="M128 262 L142 262 L140 348 L128 348 Z"/>
+  <path d="M129 354 L140 354 L138 428 L128 428 Z"/>
+  <path d="M142 356 L148 356 L146 428 L141 428 Z"/>
+  <path d="M120 432 h30 q10 0 10 8 h-46 q0 -8 6 -8 z"/>
+  <path d="M172 262 L158 262 L160 348 L172 348 Z"/>
+  <path d="M171 354 L160 354 L162 428 L172 428 Z"/>
+  <path d="M158 356 L152 356 L154 428 L159 428 Z"/>
+  <path d="M150 432 h30 q6 0 6 8 h-46 q0 -8 10 -8 z"/>
+ </g>
+ <g stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M175 42 H262"/><path d="M158 84 H262"/><path d="M192 102 H262"/><path d="M192 140 H262"/>
+  <path d="M203 160 H262"/><path d="M160 202 H262"/><path d="M190 244 H262"/>
+  <path d="M209 250 H236 V286 H262"/><path d="M166 300 H262"/><path d="M167 350 H262"/>
+  <path d="M168 392 H262"/><path d="M182 436 H262"/>
+
+ </g>
+ <g font-size="12" fill="#141413">
+  <text x="268" y="46"><tspan font-weight="700">두부(頭部)</tspan> — 두개골·안면골</text>
+  <text x="268" y="88"><tspan font-weight="700">경추 C1~7</tspan> — 목</text>
+  <text x="268" y="106"><tspan font-weight="700">견관절</tspan> — 어깨 (쇄골·견갑골·상완골두)</text>
+  <text x="268" y="144"><tspan font-weight="700">흉추 T1~12</tspan> · 늑골 12쌍</text>
+  <text x="268" y="164"><tspan font-weight="700">상완골</tspan> — 위팔뼈</text>
+  <text x="268" y="206"><tspan font-weight="700">요추 L1~5</tspan> — 허리</text>
+  <text x="268" y="248"><tspan font-weight="700">골반·고관절</tspan> — 관골·천골·비구</text>
+  <text x="268" y="290"><tspan font-weight="700">전완</tspan> — 요골(엄지쪽)·척골(새끼쪽)</text>
+  <text x="268" y="304"><tspan font-weight="700">대퇴골</tspan> — 넙다리뼈, 인체 최장골</text>
+  <text x="268" y="354"><tspan font-weight="700">슬관절</tspan> — 무릎 (+ 슬개골)</text>
+  <text x="268" y="396"><tspan font-weight="700">하퇴</tspan> — 경골(굵고 안쪽)·비골(가늘고 바깥)</text>
+  <text x="268" y="440"><tspan font-weight="700">족관절·족부</tspan> — 발목·발</text>
+ </g>
+ <g font-size="11.5" fill="#1f5fa8" font-weight="700">
+  <text x="8" y="182">주관절 (팔꿈치)</text><text x="8" y="270">완관절 (손목)</text>
+ </g>
+</svg><figcaption>장해분류표와 맥브라이드표는 모두 이 부위 이름으로 쓰여 있다. 문제에서 '완관절'이 나오면 손목, '주관절'이면 팔꿈치다.</figcaption></figure>`}
     ],
     cards:[
       {f:"의학이론에서 근골격계의 출제 비중은?", b:"9개년 91문항 중 39문항·390점으로 43.3%. 압도적 1위다."},
@@ -4116,7 +4183,46 @@ const MED = {
        <tr><td>기전</td><td><b>외전 + 외회전</b> (럭비, 테니스, 투구)</td><td>굴곡·내회전 상태의 직접외력, <b>전기충격·간질발작</b></td></tr>
        <tr><td>동반병변</td><td><b>방카르트 병변</b>(전하방 관절와순 파열)<br><b>힐삭스 병변</b>(상완골두 후측 함몰)</td><td>영상에서 <b>전구 징후</b>(light bulb sign)</td></tr>
        </table></div>
-       <div class="warn"><b>가능한 한 빨리 정복</b>해야 한다. <b>액와신경 손상</b>을 막기 위해서다. 합병증은 액와동맥·액와신경 손상, 재발성 탈구, 회전근개 파열, 삼각근 위축으로 인한 <b>외전 제한</b>.</div>`,
+       <div class="warn"><b>가능한 한 빨리 정복</b>해야 한다. <b>액와신경 손상</b>을 막기 위해서다. 합병증은 액와동맥·액와신경 손상, 재발성 탈구, 회전근개 파열, 삼각근 위축으로 인한 <b>외전 제한</b>.</div><div class="qfig"><div class="qrd">기출 44회 1번 (10점)</div><div class="qt">상지의 구조 — 뼈와 관절의 이름</div><div class="qq">(1) ①~⑤ 각 숫자에 해당하는 <b>뼈</b>의 이름을 쓰시오. (5점)<br>
+    (2) 점선으로 표시된 ⑥·⑦·⑧에 해당하는 <b>관절</b>의 이름을 쓰시오. <span class="hint">(견관절·완관절이 아닌 구체적 명칭)</span> (3점)<br>
+    (3) 삼각섬유연골복합체(TFCC) 병변이 발생하는 관절은? (2점)</div><svg viewBox="0 0 560 430" role="img" aria-label="상지의 구조 문제 그림">
+ <g fill="#f4f5f6" stroke="#2b2b2a" stroke-width="1.4" stroke-linejoin="round">
+  <path d="M120 92 q54 -20 104 -4 l-2 11 q-48 -15 -100 4 z"/>
+  <path d="M232 84 L312 92 L296 176 q-40 -22 -56 -56 z"/>
+  <path d="M238 100 q26 -6 34 10 q6 20 -14 28 q-22 2 -26 -16 z"/>
+  <circle cx="252" cy="120" r="21" fill="#e9edf2"/>
+  <path d="M240 138 L266 140 L280 250 L256 252 Z"/>
+  <path d="M256 258 L278 258 L296 372 L276 374 Z"/>
+  <path d="M234 260 L252 258 L264 372 L246 374 Z"/>
+  <path d="M240 380 h58 q6 0 6 8 v10 q0 7 -7 7 h-56 q-7 0 -7 -7 v-10 q0 -8 6 -8 z"/>
+  <path d="M242 408 h54 v14 h-54 z"/>
+ </g>
+ <g stroke="#2b2b2a" stroke-width="1.3" stroke-dasharray="4 3" fill="none">
+  <ellipse cx="232" cy="90" rx="17" ry="13"/>
+  <ellipse cx="256" cy="124" rx="24" ry="20"/>
+  <ellipse cx="270" cy="378" rx="34" ry="14"/>
+ </g>
+ <g stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M300 130 H352"/><path d="M170 86 H140 V60"/><path d="M262 190 H352"/>
+  <path d="M290 320 H352"/><path d="M244 320 H196"/>
+  <path d="M232 78 V52 H352"/><path d="M278 124 H352" opacity="0"/><path d="M280 140 H352"/>
+  <path d="M296 384 H352"/>
+ </g>
+ <g font-size="17" font-weight="700" fill="#c0392b">
+  <text x="120" y="52">②</text>
+  <text x="358" y="58">⑥</text>
+  <text x="358" y="136">⑦</text>
+  <text x="358" y="196">③</text>
+  <text x="358" y="390">⑧</text>
+  <text x="358" y="326">④</text>
+  <text x="176" y="326">⑤</text>
+  <text x="318" y="112">①</text>
+ </g>
+ <path d="M316 106 L304 100" stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none"/>
+ <text x="24" y="28" font-size="11.5" fill="#6b6a66">왼쪽 상지를 앞에서 본 그림 (해부학적 자세) — 몸 안쪽이 왼편</text>
+</svg><details class="ansbox"><summary>정답 보기</summary><div class="ansb"><b>(1) 뼈</b> ① 견갑골(scapula) ② 쇄골(clavicle) ③ 상완골(humerus) ④ 요골(radius) ⑤ 척골(ulna)<br>
+ <b>(2) 관절</b> ⑥ 견쇄관절(견봉쇄골관절, acromioclavicular joint) ⑦ 상완와관절(관절와상완관절, glenohumeral joint) ⑧ 요수근관절(radiocarpal joint)<br>
+ <b>(3)</b> 원위요척관절 · 척수근관절</div><div class="qtip"><span class="h">여기서 갈린다</span>요골은 <b>엄지쪽</b>, 척골은 <b>새끼쪽</b>이다. 앞에서 본 그림이면 몸 바깥쪽이 요골이다. 이 하나만 헷갈려도 두 문제가 같이 틀린다.</div></details></div>`,
        mnemo:{key:"쇄골=가장 흔함 / 견관절=가장 넓음", how:"쇄골은 <b>가장 흔히 부러지는 뼈</b>, 견관절은 <b>가장 넓게 움직이는 관절</b>이라 <b>가장 잘 빠진다</b>.<br>전방탈구는 <b>외전+외회전</b>, 동반병변은 <b>방카르트·힐삭스</b>."}},
 
       {h:"회전근개 파열과 어깨충돌증후군 — 기왕증 판단의 핵심", freq:F(3,[43,49]),
@@ -4129,7 +4235,32 @@ const MED = {
        <div class="why"><span class="h">충돌증후군과 무엇이 다른가</span>
        <b>어깨충돌증후군</b>은 견봉과 상완골 사이가 좁아져 <b>극상근건이 견봉에 부딪혀</b> 염증이 생긴 것이다. 팔을 드는 <b>중간에는 안 아프다가 완전히 올라갈 때</b> 아프다. 교사·도배공처럼 팔을 위로 쓰는 직업에 많다.<br>
        <b>회전근개 파열</b>은 건 자체가 찢어진 것이라 <b>들어올리면 아프고 동시에 근력이 약하다</b>.<br>
-       이 구분이 곧 <b>기왕증(퇴행성) vs 외상</b>의 판단이다. 40대 이후의 회전근개 파열은 퇴행성 변화가 바탕에 있는 경우가 많다.</div>`,
+       이 구분이 곧 <b>기왕증(퇴행성) vs 외상</b>의 판단이다. 40대 이후의 회전근개 파열은 퇴행성 변화가 바탕에 있는 경우가 많다.</div><div class="qfig"><div class="qrd">기출 예상</div><div class="qt">회전근개 — 네 개의 근육</div><div class="qq">(1) 회전근개를 이루는 ①~④ 근육의 이름을 쓰시오.<br>
+    (2) 이 중 <b>파열이 가장 흔한 것</b>과, 그 파열을 확인하는 이학적 검사 이름을 쓰시오.<br>
+    (3) 어깨충돌증후군에서 통증이 심해지는 <b>각도 범위</b>를 쓰시오.</div><svg viewBox="0 0 560 320" role="img" aria-label="회전근개 문제 그림">
+ <g fill="#f4f5f6" stroke="#2b2b2a" stroke-width="1.4" stroke-linejoin="round">
+  <path d="M180 60 L330 70 L300 240 L200 200 Z"/>
+  <path d="M186 128 L330 122 L328 140 L188 146 Z" fill="#e9edf2"/>
+  <circle cx="368" cy="118" r="30" fill="#e9edf2"/>
+  <path d="M352 144 L392 150 L384 262 L352 256 Z"/>
+  <path d="M300 78 q44 -16 66 12" fill="none" stroke-width="9" stroke-linecap="round" opacity=".9"/>
+ </g>
+ <g fill="#dfe7f0" stroke="#2b2b2a" stroke-width="1.2">
+  <path d="M210 96 q70 -22 128 4 q-22 22 -60 20 q-40 -2 -68 -24 z"/>
+  <path d="M210 166 q70 -18 124 10 q-26 20 -62 16 q-38 -4 -62 -26 z"/>
+  <path d="M232 206 q54 -8 92 18 q-24 14 -54 10 q-26 -6 -38 -28 z"/>
+ </g>
+ <path d="M344 120 q-60 34 -110 16" fill="none" stroke="#2b2b2a" stroke-width="6" stroke-dasharray="7 5" opacity=".8"/>
+ <g stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M268 90 H180 V52"/><path d="M266 176 H170"/><path d="M280 220 H170"/><path d="M270 140 H402"/>
+ </g>
+ <g font-size="17" font-weight="700" fill="#c0392b">
+  <text x="158" y="46">①</text><text x="146" y="182">②</text><text x="146" y="226">③</text><text x="408" y="146">④</text>
+ </g>
+ <text x="24" y="24" font-size="11.5" fill="#6b6a66">오른쪽 견갑골을 뒤에서 본 그림 (④는 앞면에 있어 점선으로 표시)</text>
+</svg><details class="ansbox"><summary>정답 보기</summary><div class="ansb"><b>(1)</b> ① 극상근(supraspinatus) ② 극하근(infraspinatus) ③ 소원근(teres minor) ④ 견갑하근(subscapularis)<br>
+ <b>(2)</b> 파열이 가장 흔한 것은 <b>극상근</b> — 견봉 아래 좁은 공간을 지나 반복 마찰을 받기 때문. 검사는 <b>Jobe 검사(empty can test)</b>, 낙상 징후(drop arm sign)<br>
+ <b>(3)</b> 외전 <b>60°~120°</b> 구간에서 통증이 심해진다 (painful arc)</div><div class="qtip"><span class="h">여기서 갈린다</span><b>극상·극하·소원근은 뒤, 견갑하근만 앞</b>이다. 그래서 앞의 견갑하근만 <b>내회전</b>을 담당하고 나머지는 외전·외회전이다. 파열은 거의 항상 <b>극상근</b>에서 시작한다 — 기왕증 다툼이 가장 많은 부위이기도 하다.</div></details></div>`,
        mnemo:{key:"견 · 극상 · 극하 · 소원", how:"회전근개 4근육 — <b>견</b>갑하근 · <b>극상</b>근 · <b>극하</b>근 · <b>소원</b>근. 파열은 <b>극상근</b>부터.<br>충돌증후군은 <b>끝까지 올릴 때</b> 아프고, 파열은 <b>들면서 아프고 힘도 없다</b>."}},
 
       {h:"상완골 골절과 주관절", freq:F(3,[41,42,47,49]),
@@ -4274,7 +4405,36 @@ const MED = {
        <li>유형 — 장골익 골절, 천골 골절, 상하치골 골절, 전후방 압박골절, 측방 압박골절, 수직 전단 파괴</li>
        <li>치료 — 안정형은 보존적(체중부하 방지 + <b>혈전 예방 항응고제</b>), 불안정형은 관혈적 정복·내고정 또는 외고정장치</li>
        <li>합병증 — <b>혈관 손상에 의한 과다출혈·쇼크</b>(사망 원인), <b>방광·요도 손상</b>, 좌골신경총 손상, 부정유합. <b>혈행이 풍부해 지연유합·불유합은 드물다.</b></li>
-       <li>특별 합병증 — <b>심부정맥혈전증과 폐색전증</b></li></ul>`,
+       <li>특별 합병증 — <b>심부정맥혈전증과 폐색전증</b></li></ul><div class="qfig"><div class="qrd">기출 45회 5번 (10점)</div><div class="qt">골반 — 무명골을 이루는 뼈와 관절</div><div class="qq">골반골은 두 개의 무명골, 천골, 미골로 이루어졌으며, 후방에는 두 무명골이 천골과 ( ① )을 형성하고, 전방에는 양측 무명골이 ( ② )을 형성한다. 무명골은 ( ③ ), ( ④ ), ( ⑤ ) 세 개의 뼈가 융합하여 이루어진다.<br>
+ (1) ①·②에 해당하는 <b>관절</b>의 이름 (각 2점) &nbsp;(2) ③·④·⑤에 해당하는 <b>뼈</b>의 이름 (각 2점)</div><svg viewBox="0 0 560 320" role="img" aria-label="골반 정면 문제 그림">
+ <g fill="#f4f5f6" stroke="#2b2b2a" stroke-width="1.4" stroke-linejoin="round">
+  <path d="M254 48 q26 -6 50 0 l10 66 q-6 30 -35 36 q-29 -6 -35 -36 z"/>
+  <path d="M282 150 q12 2 14 16 l-6 22 q-10 4 -16 -2 l-4 -20 z"/>
+  <path d="M250 44 q-70 -6 -104 44 q-16 44 4 82 q28 26 62 14 q26 -12 34 -44 q-8 -46 4 -96 z"/>
+  <path d="M308 44 q70 -6 104 44 q16 44 -4 82 q-28 26 -62 14 q-26 -12 -34 -44 q8 -46 -4 -96 z"/>
+  <circle cx="212" cy="168" r="27" fill="#e9edf2"/>
+  <circle cx="346" cy="168" r="27" fill="#e9edf2"/>
+  <path d="M200 196 q34 -6 52 22 l-14 30 q-34 4 -48 -22 z"/>
+  <path d="M358 196 q-34 -6 -52 22 l14 30 q34 4 48 -22 z"/>
+  <path d="M238 218 q22 22 16 56 q-20 16 -44 4 q-16 -26 -6 -46 z"/>
+  <path d="M320 218 q-22 22 -16 56 q20 16 44 4 q16 -26 6 -46 z"/>
+  <rect x="270" y="222" width="18" height="34" rx="4" fill="#e9edf2"/>
+ </g>
+ <g stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M250 104 H152 V62"/><path d="M268 240 H212"/>
+  <path d="M176 118 H112"/><path d="M214 212 H154"/><path d="M220 256 H154"/>
+ </g>
+ <g font-size="17" font-weight="700" fill="#c0392b">
+  <text x="134" y="66">①</text>
+  <text x="188" y="246">②</text>
+  <text x="88" y="124">③</text>
+  <text x="132" y="218">⑤</text>
+  <text x="132" y="262">④</text>
+ </g>
+ <text x="24" y="24" font-size="11.5" fill="#6b6a66">골반을 앞에서 본 그림</text>
+</svg><details class="ansbox"><summary>정답 보기</summary><div class="ansb"><b>(1) 관절</b> ① 천장관절(sacroiliac joint) ② 치골문합 = 치골결합(symphysis pubis)<br>
+ <b>(2) 뼈</b> ③ 장골(ilium) ④ 좌골(ischium) ⑤ 치골(pubis)<br>
+ <span class="sub">무명골(관골) = 장골 + 좌골 + 치골이 <b>비구</b>에서 만나 융합된 것</span></div><div class="qtip"><span class="h">여기서 갈린다</span>위가 <b>장</b>골, 앞아래가 <b>치</b>골, 뒤아래가 <b>좌</b>골 — 앉을 때 바닥에 닿는 뼈가 좌골(坐骨)이다. 글자 뜻으로 외우면 안 헷갈린다.</div></details></div>`,
        mnemo:{key:"장 · 좌 · 치 / 천장 · 치골결합", how:"무명골은 <b>장</b>골·<b>좌</b>골·<b>치</b>골 셋이 붙은 것. 뒤는 <b>천장</b>관절, 앞은 <b>치골결합</b>.<br>골반은 <b>고리</b>라서 한 군데만 부러지지 않는다."}},
 
       {h:"심부정맥혈전증과 폐색전증", freq:F(3,[48]),
@@ -4311,7 +4471,40 @@ const MED = {
        <tr><td><b>전자하</b></td><td>다발성 외상, 교통사고·오토바이·산업재해. <b>병적골절</b>(원발암·전이암)도 원인</td><td>DVT·폐색전증·폐렴·비뇨기 감염</td></tr>
        </table></div>
        <div class="warn">공통 치료 원칙 — <b>수상 후 신속한 수술과 조기 운동</b>. 고령에서 오래 누워 있으면 폐렴·욕창·혈전으로 사망한다. 이것이 대퇴골 골절 수술을 서두르는 이유다.</div>
-       <p><b>대퇴골두 무혈성 괴사</b>는 1단원에서 본 그대로다. <b>30~50대</b>, 남성에 많고, 외상성(탈구·경부골절)과 비외상성(음주·스테로이드·흡연·잠수병 등)으로 나뉜다. <b>Patrick 검사 양성</b>, <b>외전·내회전 제한</b>, 초기 <b>Crescent 징후</b>, MRI <b>이중선 징후</b>. 치료는 코어감압술·골이식·인공관절 치환술.</p>`},
+       <p><b>대퇴골두 무혈성 괴사</b>는 1단원에서 본 그대로다. <b>30~50대</b>, 남성에 많고, 외상성(탈구·경부골절)과 비외상성(음주·스테로이드·흡연·잠수병 등)으로 나뉜다. <b>Patrick 검사 양성</b>, <b>외전·내회전 제한</b>, 초기 <b>Crescent 징후</b>, MRI <b>이중선 징후</b>. 치료는 코어감압술·골이식·인공관절 치환술.</p><div class="qfig"><div class="qrd">기출 예상</div><div class="qt">대퇴골 근위부 — 부위 명칭과 골절 유형</div><div class="qq">(1) ①~④ 각 부위의 명칭을 쓰시오.<br>
+    (2) Ⓐ·Ⓑ·Ⓒ 각 골절선에 해당하는 골절의 이름을 쓰시오.<br>
+    (3) 위 골절 중 <b>무혈성 괴사와 불유합</b>이 가장 잘 생기는 것은 무엇이며 그 이유를 쓰시오.</div><svg viewBox="0 0 620 290" role="img" aria-label="대퇴골 근위부 문제 그림">
+ <g fill="#efeeea" stroke="#2b2b2a" stroke-width="1.3" stroke-linejoin="round">
+  <path d="M214 34 q66 -10 92 16 q10 38 -20 60 q-14 -34 -54 -40 q-18 -14 -18 -36 z"/>
+ </g>
+ <g fill="#f4f5f6" stroke="#2b2b2a" stroke-width="1.3" stroke-linejoin="round">
+  <circle cx="228" cy="76" r="31"/>
+  <path d="M248 96 L262 84 L292 116 L276 130 Z"/>
+  <path d="M286 104 q30 -6 34 22 l-2 32 q-26 8 -44 -6 l4 -34 z"/>
+  <path d="M280 152 q22 -6 38 2 l-6 118 q-16 5 -30 0 z"/>
+ </g>
+ <g stroke="#2b2b2a" stroke-width="3" stroke-dasharray="8 5" fill="none" stroke-linecap="round">
+  <path d="M244 92 L286 128"/><path d="M276 112 L330 142"/><path d="M276 186 L322 186"/>
+ </g>
+ <g stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M198 62 H150"/><path d="M264 104 H208 V138"/><path d="M286 112 H236 V80" opacity="0"/>
+  <path d="M290 118 H360" opacity="0"/><path d="M318 120 H360"/><path d="M288 168 H236 V206"/>
+  <path d="M302 274 H360"/>
+ </g>
+ <g font-size="17" font-weight="700" fill="#c0392b">
+  <text x="126" y="68">①</text><text x="196" y="156">②</text><text x="366" y="126">③</text>
+  <text x="222" y="224">④</text><text x="366" y="280">⑤</text>
+ </g>
+ <g font-size="15" font-weight="700" fill="#1f5fa8">
+  <text x="336" y="100">Ⓐ</text><text x="342" y="152">Ⓑ</text><text x="332" y="192">Ⓒ</text>
+ </g>
+ <g stroke="#1f5fa8" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M286 94 H332"/>
+ </g>
+ <text x="24" y="24" font-size="11.5" fill="#6b6a66">오른쪽 고관절을 앞에서 본 그림</text>
+</svg><details class="ansbox"><summary>정답 보기</summary><div class="ansb"><b>(1)</b> ① 대퇴골두(femoral head) ② 대퇴경부(femoral neck) ③ 대전자(greater trochanter) ④ 소전자(lesser trochanter) ⑤ 대퇴골 간부(shaft)<br>
+ <b>(2)</b> Ⓐ <b>대퇴경부 골절</b> Ⓑ <b>전자간 골절</b> Ⓒ <b>전자하 골절</b><br>
+ <b>(3)</b> <b>대퇴경부 골절</b>. 골두로 가는 혈류는 대부분 경부를 따라 올라가는 상·하 지대동맥(내측대퇴회선동맥)에 의존하는데, 경부는 <b>관절낭 안</b>에 있어 골절되면 이 혈관이 끊기고 골막도 없어 혈종에 의한 치유가 되지 않는다. 그래서 무혈성 괴사·불유합이 흔하고 고령에서는 인공관절치환술을 택한다.</div><div class="qtip"><span class="h">여기서 갈린다</span><b>관절낭 안이냐 밖이냐</b>가 전부다. 경부(안) → 혈류 끊김 → 괴사·불유합. 전자간(밖) → 혈류 좋음 → 잘 붙지만 <b>출혈이 많다</b>. 답안에 이 한 줄 대비를 반드시 넣는다.</div></details></div>`},
 
       {h:"슬관절 — 골절과 반월상 연골", freq:F(3,[45,46]),
        body:`<p>슬관절은 <b>신체에서 가장 큰 무게를 지탱하는 관절</b>로 대퇴골·경골·슬개골로 구성된다.</p>
@@ -4351,7 +4544,33 @@ const MED = {
        ※ 모범답안이 명시했다 — <b>"20~30도 굴곡"과 "경골을 전방으로 당긴다"는 반드시 써야 한다.</b></div>
        <p><b>인대손상 등급</b> — Grade Ⅰ 경미(안정성 유지), Grade Ⅱ 부분파열(느슨해짐), Grade Ⅲ 완전파열(불안정).<br>
        <b>전방전위 정도</b> — Grade 0: 2mm 이하 / 1: 3~5mm / 2: 6~10mm / 3: 11mm 이상.</p>
-       <p>가장 정확한 확인은 <b>관절내시경</b>이며, MRI와 <b>Arthrometer(KT-2000)·Telos 부하촬영</b>이 사용된다.</p>`,
+       <p>가장 정확한 확인은 <b>관절내시경</b>이며, MRI와 <b>Arthrometer(KT-2000)·Telos 부하촬영</b>이 사용된다.</p><div class="qfig"><div class="qrd">기출 예상</div><div class="qt">슬관절 — 네 인대와 연골</div><div class="qq">(1) ①~④ 인대의 명칭을 쓰시오.<br>
+    (2) ⑤의 명칭과, 손상 여부를 보는 <b>이학적 검사</b> 이름을 쓰시오.<br>
+    (3) <b>전방전위검사(anterior drawer test)</b>가 양성일 때 손상된 인대의 번호와 이름을 쓰시오.</div><svg viewBox="0 0 560 300" role="img" aria-label="슬관절 문제 그림">
+ <g stroke="#2b2b2a" stroke-width="1.4" fill="#f4f5f6">
+  <path d="M228 20 h44 v70 q0 18 -22 18 q-22 0 -22 -18 z"/>
+  <ellipse cx="228" cy="106" rx="20" ry="16"/><ellipse cx="272" cy="106" rx="20" ry="16"/>
+  <path d="M226 150 h48 v110 h-48 z"/>
+  <path d="M282 156 h14 v96 h-14 z"/>
+  <ellipse cx="250" cy="140" rx="46" ry="12" fill="#fff"/>
+ </g>
+ <g stroke="#2b2b2a" stroke-width="4" fill="none" stroke-linecap="round">
+  <path d="M230 100 L268 138"/><path d="M270 100 L232 138"/>
+  <path d="M208 92 L210 172"/><path d="M292 92 L294 172"/>
+ </g>
+ <g stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M262 112 H352"/><path d="M240 126 H352" opacity="0"/><path d="M244 128 H330 V168 H352"/>
+  <path d="M209 100 H150"/><path d="M293 100 H352" opacity="0"/><path d="M294 140 H352"/>
+  <path d="M206 142 H150"/>
+ </g>
+ <g font-size="17" font-weight="700" fill="#c0392b">
+  <text x="358" y="118">①</text><text x="358" y="174">②</text>
+  <text x="126" y="106">③</text><text x="358" y="146">④</text><text x="126" y="148">⑤</text>
+ </g>
+ <text x="24" y="24" font-size="11.5" fill="#6b6a66">오른쪽 무릎을 앞에서 본 그림</text>
+</svg><details class="ansbox"><summary>정답 보기</summary><div class="ansb"><b>(1)</b> ① 전십자인대(ACL) ② 후십자인대(PCL) ③ 내측측부인대(MCL) ④ 외측측부인대(LCL)<br>
+ <b>(2)</b> ⑤ <b>반월상연골</b>(내측·외측) — <b>McMurray 검사</b> (그 외 Apley 압박검사)<br>
+ <b>(3)</b> ① <b>전십자인대(ACL)</b> — 경골이 앞으로 밀리는 것을 막는 인대이므로, 앞으로 밀리면 ACL 손상이다.</div><div class="qtip"><span class="h">여기서 갈린다</span><b>전방</b>으로 밀리면 <b>전</b>십자, <b>후방</b>으로 밀리면 <b>후</b>십자 — 이름 그대로다. 옆으로 벌어지면(내반·외반) 옆인대(MCL·LCL)를 본다. 동요관절 장해평가는 이 스트레스 검사의 <b>건측 대비 차이(mm)</b>로 등급을 매긴다.</div></details></div>`,
        mnemo:{key:"뚝 소리 나면 ACL", how:"점프 착지 + <b>'뚝'</b> + 불안정감 = <b>ACL</b>. 검사는 <b>라크만</b>.<br>계기판에 무릎 찧었으면 <b>PCL</b>. 옆에서 밀렸으면 <b>MCL(외반)</b>."}},
 
       {h:"족관절과 족부", freq:F(3,[44,45]),
@@ -4369,7 +4588,62 @@ const MED = {
        <p><b>거골</b> — 표면의 <b>60%가 관절연골</b>이라 혈류가 나빠 <b>무혈성 괴사가 호발</b>한다. 경부 골절이 가장 흔하고, <b>체부 골절은 예후가 훨씬 나쁘며 탈구가 동반되면 100% 괴사</b>한다.</p>
        <p><b>종골</b> — <b>족근골 중 가장 큰 뼈이자 가장 흔한 골절</b>. <b>추락 손상</b>이 원인이고 <b>약 10%에서 척추 압박골절을 동반</b>한다. 관절외·경미한 전위는 고정 6~8주, 관절내 골절은 해부학적 복원과 조기 관절운동. 급성 합병증은 구획증후군·피부괴사·감염·비복신경 손상, 만성 합병증은 관절강직·<b>거골하관절의 외상성 관절염</b>·checkrein 변형(갈퀴족지).</p>
        <div class="warn">45회가 종골 골절 사례에서 <b>"종골과 (거골)이 이루는 (거골하관절)에 외상성 관절염"</b>을 빈칸으로 물었고, 심한 경우의 수술로 <b>거골하관절 유합술</b>을 답하게 했다. 추가 영상검사는 <b>CT</b>다.</div>
-       <p><b>피로골절</b> — 과사용·반복활동으로 중족골·주상골·종골·거골경부·대퇴경부·경골 내측에 발생한다. <b>휴식하면 줄고 활동하면 심해지는</b> 통증이 특징이다.</p>`,
+       <p><b>피로골절</b> — 과사용·반복활동으로 중족골·주상골·종골·거골경부·대퇴경부·경골 내측에 발생한다. <b>휴식하면 줄고 활동하면 심해지는</b> 통증이 특징이다.</p><div class="qfig"><div class="qrd">기출 44회 2번 (10점)</div><div class="qt">발목 — 외측 인대와 주변 구조</div><div class="qq">(1) 외측 발목의 안정성과 관련이 높은 주요 인대 ①·②·③을 쓰시오. (3점)<br>
+    (2) ④의 명칭을 쓰시오. (1점)<br>
+    (3) ⑤·⑥에 해당하는 뼈의 이름을 쓰시오. (2점)<br>
+    (4) 발목 외상 시 가장 많이 손상되는 <b>동작</b>(2점)과 가장 많이 손상되는 <b>인대</b>(2점)를 쓰시오.</div><svg viewBox="0 0 560 340" role="img" aria-label="발목 외측 문제 그림">
+ <g fill="#f4f5f6" stroke="#2b2b2a" stroke-width="1.4" stroke-linejoin="round">
+  <path d="M252 30 L300 30 L304 172 q-4 18 -28 18 q-24 0 -26 -18 Z"/>
+  <path d="M308 34 L332 34 L338 186 q0 16 -14 16 q-14 0 -16 -16 Z"/>
+  <path d="M236 196 q44 -18 86 -2 q8 24 -14 36 q-42 8 -64 -8 z"/>
+  <path d="M244 238 q56 -12 122 6 l2 34 q-62 12 -126 -6 z"/>
+  <path d="M130 240 q60 -14 112 -2 l4 34 q-60 10 -114 -4 z"/>
+  <path d="M104 246 q22 -6 28 4 l2 26 q-22 4 -30 -4 z"/>
+ </g>
+ <path d="M348 56 q-8 70 -4 116 q2 22 12 30" fill="none" stroke="#2b2b2a" stroke-width="8" stroke-linecap="round" opacity=".85"/>
+ <g stroke="#2b2b2a" stroke-width="3.4" fill="none" stroke-linecap="round">
+  <path d="M316 192 L262 210"/>
+  <path d="M320 196 L334 258"/>
+  <path d="M326 190 L356 208"/>
+ </g>
+ <g stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M352 206 H410"/><path d="M334 258 H410"/><path d="M288 202 H212 V172"/>
+  <path d="M352 120 H410"/><path d="M330 262 H410" opacity="0"/>
+  <path d="M302 262 V304"/><path d="M276 220 H196"/>
+ </g>
+ <g font-size="17" font-weight="700" fill="#c0392b">
+  <text x="416" y="212">①</text>
+  <text x="416" y="264">②</text>
+  <text x="194" y="166">③</text>
+  <text x="416" y="126">④</text>
+  <text x="294" y="322">⑤</text>
+  <text x="176" y="226">⑥</text>
+ </g>
+ <text x="24" y="24" font-size="11.5" fill="#6b6a66">왼쪽 발목을 바깥쪽(외측)에서 본 그림 — 왼편이 발끝, 오른편이 뒤꿈치</text>
+</svg><details class="ansbox"><summary>정답 보기</summary><div class="ansb"><b>(1)</b> ① 후거비인대(posterior talofibular lig.) ② 종비인대(calcaneofibular lig.) ③ 전거비인대(anterior talofibular lig.)<br>
+ <b>(2)</b> ④ 아킬레스건(achilles tendon)<br>
+ <b>(3)</b> ⑤ 종골(calcaneus) ⑥ 거골(talus)<br>
+ <b>(4)</b> 동작 — <b>족저굴곡 + 내번</b>(발이 안으로 휘는 내반력) / 인대 — <b>전거비인대</b></div><div class="qtip"><span class="h">여기서 갈린다</span>외측 인대 3개는 <b>앞에서 뒤로 전거비 → 종비 → 후거비</b>. 가장 잘 다치는 것은 맨 앞의 <b>전거비인대</b>다. 이름 자체가 붙는 곳을 말해준다 — 종<b>비</b>인대는 종골과 비골, 거<b>비</b>인대는 거골과 비골.</div></details></div><div class="qfig"><div class="qrd">기출 45회 9번 (10점)</div><div class="qt">삼과 골절 — 어느 뼈가 부러진 것인가</div><div class="qq">(1) '삼과 골절'에서 골절이 발생한 뼈의 <b>번호 두 개</b>를 찾고 그 이름을 함께 쓰시오. (각 2점, 총 8점)<br>
+    (2) 삼과 골절에 가장 적합한 <b>치료방법</b>을 간단히 쓰시오. (2점)</div><svg viewBox="0 0 560 320" role="img" aria-label="발목관절 정면 문제 그림">
+ <g fill="#f4f5f6" stroke="#2b2b2a" stroke-width="1.4" stroke-linejoin="round">
+  <path d="M236 30 L298 30 L302 176 q-4 26 -36 26 q-32 0 -34 -26 Z"/>
+  <path d="M316 34 L344 34 L350 186 q0 22 -18 22 q-16 0 -18 -22 Z"/>
+  <path d="M222 212 q56 -22 120 -2 q10 30 -22 42 q-52 10 -90 -8 z"/>
+  <path d="M208 268 q76 -18 156 4 l-2 26 q-80 14 -156 -4 z"/>
+ </g>
+ <g stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M352 120 H404"/><path d="M232 120 H180"/><path d="M228 232 H180"/><path d="M212 288 H160"/>
+ </g>
+ <g font-size="17" font-weight="700" fill="#c0392b">
+  <text x="410" y="126">①</text><text x="158" y="126">②</text>
+  <text x="158" y="238">③</text><text x="136" y="294">④</text>
+ </g>
+ <text x="24" y="24" font-size="11.5" fill="#6b6a66">왼쪽 발목관절을 앞에서 본 그림</text>
+ <text x="404" y="150" font-size="11" fill="#6b6a66">바깥쪽</text>
+ <text x="156" y="150" font-size="11" fill="#6b6a66">안쪽</text>
+</svg><details class="ansbox"><summary>정답 보기</summary><div class="ansb"><b>(1)</b> ① <b>비골</b>(fibula) — 외과 / ② <b>경골</b>(tibia) — 내과·후과<br>
+ <span class="sub">삼과 골절 = 경골의 <b>내과 + 후과</b>, 비골의 <b>외과</b> 세 곳이 부러진 것. (③ 거골, ④ 종골은 정답이 아니다)</span><br>
+ <b>(2)</b> 전위가 크고 도수정복이 어려워 <b>수술적 치료</b> — 관혈적 정복 및 내고정술(나사못·금속판)</div><div class="qtip"><span class="h">여기서 갈린다</span>'과(踝)'는 복사뼈다. 경골이 두 개(내과·후과), 비골이 하나(외과) — <b>2+1=3</b>이라 삼과. 뼈는 두 개인데 과는 셋이라는 점이 함정이다.</div></details></div>`,
        mnemo:{key:"전거비 → 종비", how:"발목 삐면 <b>전거비인대</b>부터, 다음이 <b>종비인대</b>. 기전은 <b>내반</b>.<br>추락해서 발뒤꿈치로 착지 → <b>종골 골절 + 척추 압박골절 10%</b>를 반드시 함께 본다."}}
     ],
     cards:[
@@ -4459,7 +4733,39 @@ const MED = {
        <li><b>척수</b>는 <b>후두공에서 제1~2요추 추간판 사이</b>까지. 그 아래는 <b>마미신경총</b>이다.</li></ul>
        <div class="why"><span class="h">체간골이란 (43회 출제)</span>
        <b>흉곽과 척추체</b>로 이루어진다. 흉곽은 <b>흉골 + 늑골 12쌍 + 흉추 12개</b>, 척추체는 경추·흉추·요추·천추·미추.<br>
-       기능은 ① <b>내부 장기의 보호</b> ② <b>몸의 지지와 자세 유지</b> ③ <b>조혈</b>과 무기질 저장 ④ 호흡운동에의 관여.</div>`,
+       기능은 ① <b>내부 장기의 보호</b> ② <b>몸의 지지와 자세 유지</b> ③ <b>조혈</b>과 무기질 저장 ④ 호흡운동에의 관여.</div><div class="qfig"><div class="qrd">기출 예상 (45회 9번 빈칸형 변형)</div><div class="qt">척추의 분절 — 부위·개수·척수의 끝</div><div class="qq">(1) ①~⑤ 각 부위의 <b>명칭과 뼈의 개수</b>를 쓰시오.<br>
+    (2) ⑥ 지점의 의미를 쓰고, 이보다 <b>아래에서 손상</b>이 있을 때 나타나는 특징을 간단히 쓰시오.<br>
+    (3) 압박골절이 가장 흔히 발생하는 부위(이행부)를 쓰시오.</div><svg viewBox="0 0 560 430" role="img" aria-label="척추 분절 문제 그림">
+ <g stroke="#2b2b2a" stroke-width="1.2" fill="#f4f5f6">
+  <rect x="250" y="24" width="34" height="11" rx="3"/><rect x="250" y="38" width="34" height="11" rx="3"/>
+  <rect x="251" y="52" width="34" height="11" rx="3"/><rect x="252" y="66" width="35" height="11" rx="3"/>
+  <rect x="253" y="80" width="35" height="11" rx="3"/><rect x="254" y="94" width="36" height="11" rx="3"/>
+  <rect x="255" y="108" width="36" height="11" rx="3"/>
+  <rect x="256" y="124" width="38" height="12" rx="3"/><rect x="256" y="139" width="38" height="12" rx="3"/>
+  <rect x="255" y="154" width="39" height="12" rx="3"/><rect x="254" y="169" width="39" height="12" rx="3"/>
+  <rect x="253" y="184" width="40" height="12" rx="3"/><rect x="252" y="199" width="40" height="12" rx="3"/>
+  <rect x="251" y="214" width="41" height="12" rx="3"/><rect x="250" y="229" width="41" height="12" rx="3"/>
+  <rect x="249" y="244" width="42" height="12" rx="3"/><rect x="248" y="259" width="42" height="12" rx="3"/>
+  <rect x="247" y="274" width="43" height="12" rx="3"/><rect x="246" y="289" width="43" height="12" rx="3"/>
+  <rect x="243" y="306" width="48" height="15" rx="3"/><rect x="242" y="324" width="49" height="15" rx="3"/>
+  <rect x="241" y="342" width="50" height="15" rx="3"/><rect x="241" y="360" width="51" height="15" rx="3"/>
+  <rect x="240" y="378" width="52" height="15" rx="3"/>
+  <path d="M238 396 h56 l-10 30 h-36 z"/>
+  <path d="M252 428 h26 l-5 8 h-16 z"/>
+ </g>
+ <g stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M296 70 H352"/><path d="M296 210 H352"/><path d="M294 350 H352"/>
+  <path d="M296 410 H352"/><path d="M280 434 H352"/>
+  <path d="M240 310 H176"/>
+ </g>
+ <g font-size="17" font-weight="700" fill="#c0392b">
+  <text x="358" y="76">①</text><text x="358" y="216">②</text><text x="358" y="356">③</text>
+  <text x="358" y="416">④</text><text x="358" y="440">⑤</text><text x="152" y="316">⑥</text>
+ </g>
+ <text x="24" y="24" font-size="11.5" fill="#6b6a66">척추를 옆에서 본 그림</text>
+</svg><details class="ansbox"><summary>정답 보기</summary><div class="ansb"><b>(1)</b> ① 경추 <b>7개</b>(C1~C7) ② 흉추 <b>12개</b>(T1~T12) ③ 요추 <b>5개</b>(L1~L5) ④ 천추 <b>5개</b>(융합 → 천골) ⑤ 미추 <b>4개</b>(융합 → 미골)<br>
+ <b>(2)</b> ⑥ <b>척수원추(脊髓圓錐) — 척수가 끝나는 높이(L1~L2)</b>. 이보다 아래는 척수가 아니라 신경근 다발인 <b>마미(cauda equina)</b>이므로, 손상 시 상위운동신경원 징후(경직·반사항진)가 아니라 <b>이완성 마비·안장마취·배뇨장애</b> 형태로 나타나고 회복 가능성이 상대적으로 높다.<br>
+ <b>(3)</b> 흉요추 이행부 <b>T11~L2</b></div><div class="qtip"><span class="h">여기서 갈린다</span><b>7 · 12 · 5</b>는 무조건 외운다. 그리고 척수가 <b>L1~2에서 끝난다</b>는 사실 하나가 척수손상·마미증후군 문제를 통째로 가른다.</div></details></div>`,
        mnemo:{key:"7 · 12 · 5 / 8 · 12 · 5 · 5 · 1", how:"뼈는 <b>경7 흉12 요5</b>, 신경근은 <b>경8</b>부터 시작해 <b>12 · 5 · 5 · 1</b>. 경추만 뼈보다 신경이 하나 많다.<br>척수는 <b>L1~2</b>에서 끝나고 그 아래는 마미."}},
 
       {h:"Denis 삼주론 — 불안정성을 가르는 기준", freq:F(3,[43,44]),
@@ -4477,7 +4783,32 @@ const MED = {
        <li><b>전이성(골절-탈구)</b> — <b>삼주 모두</b> 손상. 신경학적 손상 빈도가 가장 높다.</li></ul>
        <p><b>경추 손상</b></p>
        <ul><li><b>상위 경추(C1·C2)</b> — 후두골-환추 탈구(경추손상의 0.1%, <b>사망률 80%</b>, 척수손상 동반 시 100%), 환추 골절(제퍼슨 골절; 수직 압박, <b>약 50%에서 다른 경추 손상 동반</b>, <b>개구 촬영</b>으로 진단), <b>교수형 골절</b>(축추 양측 척추궁 협부 골절), <b>치돌기 골절</b>(제1형 상부, 제2형 경계부, 제3형 추체)</li>
-       <li><b>하위 경추(C3~C7)</b> — 6가지 손상기전 중 <b>신연굴곡 손상이 가장 흔하다</b>(C5~6, C6~7의 전방탈구). <b>신연신전 손상</b>은 고령에서 안면부터 넘어질 때 발생하고 <b>중심성 척수증후군</b>이 호발한다(상지가 하지보다 더 약해진다).</li></ul>`,
+       <li><b>하위 경추(C3~C7)</b> — 6가지 손상기전 중 <b>신연굴곡 손상이 가장 흔하다</b>(C5~6, C6~7의 전방탈구). <b>신연신전 손상</b>은 고령에서 안면부터 넘어질 때 발생하고 <b>중심성 척수증후군</b>이 호발한다(상지가 하지보다 더 약해진다).</li></ul><figure class="dg"><div class="dgt">Denis 삼주론 — 척추를 세 기둥으로 나눈다</div><svg viewBox="0 0 520 250" role="img" aria-label="Denis 삼주론">
+ <g stroke="#2b2b2a" stroke-width="1.4">
+  <path d="M60 60 h120 v110 h-120 z" fill="#dce8f6"/>
+  <path d="M180 60 h70 v110 h-70 z" fill="#fbe1d7"/>
+  <path d="M250 60 q54 0 54 55 q0 55 -54 55 z" fill="#e6f0e7"/>
+  <path d="M254 78 l34 12 M254 152 l34 -12" stroke-width="1" fill="none"/>
+  <circle cx="272" cy="115" r="15" fill="#fff"/>
+ </g>
+ <g font-size="11" fill="#141413" text-anchor="middle">
+  <text x="120" y="120" font-weight="700" font-size="13">전주 (前柱)</text>
+  <text x="120" y="138">추체 앞 2/3 · 전종인대</text>
+  <text x="215" y="112" font-weight="700" font-size="13">중주</text>
+  <text x="215" y="128">추체 뒤 1/3</text>
+  <text x="215" y="144">후종인대</text>
+  <text x="272" y="119" font-size="9.5">척수</text>
+  <text x="330" y="106" font-weight="700" font-size="13" text-anchor="start">후주 (後柱)</text>
+  <text x="330" y="124" text-anchor="start">추궁·극돌기·후방인대복합체</text>
+ </g>
+ <path d="M304 80 L326 92" stroke="#9aa3ad" stroke-dasharray="3 3"/>
+ <text x="60" y="40" font-size="12" font-weight="700" fill="#1f5fa8">척추 한 마디를 위에서 자른 단면 (앞 →→ 뒤)</text>
+ <g font-size="11.5">
+  <rect x="60" y="190" width="400" height="46" rx="6" fill="#fdf4f1" stroke="#eccfc6"/>
+  <text x="74" y="210" font-weight="700" fill="#a8412a">불안정성 판정</text>
+  <text x="74" y="228" fill="#141413">① 2개 주 이상 손상 ② 중주 손상 ③ 후만각 30°↑ ④ 추체높이 50%↑ 감소 ⑤ 신경증상</text>
+ </g>
+</svg><figcaption>두 기둥 이상이 깨지면 불안정성 골절. 중주(中柱)가 성하면 대개 안정성이다 — 중주가 핵심.</figcaption></figure>`,
        mnemo:{key:"전 · 중 · 후 / 쐐 · 방 · 챈 · 전이", how:"삼주론 — 추체를 <b>앞 2/3(전주)</b>와 <b>뒤 1/3(중주)</b>로 자르고, 뒤쪽 구조가 <b>후주</b>.<br>흉요추 골절 4종 — <b>쐐</b>기 · <b>방</b>출성 · <b>챈</b>스 · <b>전이</b>성. 손상되는 주가 1 → 2 → 2 → 3으로 늘어난다."}},
 
       {h:"압박골절 — 진단과 계측", freq:F(3,[43,44]),
@@ -4492,7 +4823,53 @@ const MED = {
        <tr><td><b>Cobb's angle</b></td><td><b>인접한 추체를 포함</b>하여 국소적 시상 만곡을 측정</td><td>척추체 골절에 의한 후만변형을 평가한다. <b>측정자 간·내 일치도가 가장 우수</b>하고 기준선 설정이 용이하다.</td></tr>
        <tr><td><b>국소 후만각(LKA)</b></td><td><b>골절된 추체만</b> 측정</td><td>누워서 찍은 것과 서서 찍은 것의 차이가 가장 적다. 다만 <b>관찰자 간 변이가 크다</b>.</td></tr>
        </table></div>
-       <div class="warn"><b>압박률</b>은 손상 추체의 높이를 인접 정상 추체와 비교해 감소한 비율로 산출한다. 여러 방법이 있으나 <b>M2 방법</b>(상·하 인접 추체 전방 높이의 평균과 비교)이 가장 일반적이고 합리적이어서 권장된다.</div>`},
+       <div class="warn"><b>압박률</b>은 손상 추체의 높이를 인접 정상 추체와 비교해 감소한 비율로 산출한다. 여러 방법이 있으나 <b>M2 방법</b>(상·하 인접 추체 전방 높이의 평균과 비교)이 가장 일반적이고 합리적이어서 권장된다.</div><div class="qfig"><div class="qrd">기출 44회 (선 긋기 문항)</div><div class="qt">콥스각과 국소 후만각 — 선을 그어 표시하라</div><div class="qq">(1) Cobb's angle을 측정하는 경우와 임상적 의의를 쓰시오. (2점)<br>
+    (2) 아래 그림에 <b>선을 그어</b> Cobb's angle 측정 방법을 표시하시오. <span class="hint">(그림을 답안지에 옮겨 그린 후 선을 그을 것)</span> (3점)<br>
+    (3) 국소 후만각(local kyphotic angle)의 임상적 의의를 쓰시오. (2점)<br>
+    (4) 아래 그림에 선을 그어 국소 후만각 측정 방법을 표시하시오. (3점)</div><svg viewBox="0 0 560 260" role="img" aria-label="압박골절 측면 문제 그림">
+ <g fill="#f4f5f6" stroke="#2b2b2a" stroke-width="1.4" stroke-linejoin="round">
+  <path d="M150 66 L250 50 L250 80 L150 96 Z"/>
+  <path d="M256 54 q22 2 22 12 q0 10 -22 12 Z" fill="#eef2f7"/>
+  <path d="M150 104 L250 88 L248 158 L148 150 Z" fill="#fbe9e2"/>
+  <path d="M254 94 q22 2 22 12 q0 10 -22 12 Z" fill="#eef2f7"/>
+  <path d="M148 150 L248 166 L246 196 L146 186 Z"/>
+  <path d="M252 170 q22 2 22 12 q0 10 -22 12 Z" fill="#eef2f7"/>
+ </g>
+ <g stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M150 72 H100"/><path d="M150 126 H100"/><path d="M148 172 H100"/>
+ </g>
+ <g font-size="11.5" text-anchor="end">
+  <text x="94" y="76" fill="#6b6a66">위 정상 추체</text>
+  <text x="94" y="130" fill="#a8412a" font-weight="700">압박골절 추체</text>
+  <text x="94" y="176" fill="#6b6a66">아래 정상 추체</text>
+ </g>
+ <text x="24" y="24" font-size="11.5" fill="#6b6a66">척추를 옆에서 본 그림 — 왼쪽이 앞(전방), 오른쪽이 뒤(후방)</text>
+ <text x="300" y="120" font-size="12" fill="#1f5fa8" font-weight="700">여기에 선을 그으시오</text>
+</svg><details class="ansbox"><summary>정답 보기</summary><div class="ansb"><b>(1) Cobb's angle</b> — 척추 <b>측만증</b>의 만곡 정도를 재는 각. <b>전후면(정면)</b> 사진에서 만곡의 <b>가장 위쪽 끝 추체의 상연</b>과 <b>가장 아래쪽 끝 추체의 하연</b>에 각각 직선을 긋고, 두 직선에 내린 수직선이 만나는 각이다. 10° 이상이면 측만증으로 진단하며, 각이 클수록 진행·수술 가능성이 높다.<br>
+ <b>(3) 국소 후만각</b> — <b>측면</b> 사진에서 <b>골절 추체 바로 위 추체의 하연</b>과 <b>바로 아래 추체의 상연</b>에 직선을 긋고 그 수직선이 만나는 각. 압박골절로 척추가 앞으로 얼마나 꺾였는지를 보여주며, <b>30° 이상이면 불안정성</b>으로 보아 후유장해 평가와 수술 판단의 근거가 된다.</div><div class="asvg"><svg viewBox="0 0 560 260" role="img" aria-label="국소 후만각 측정 정답 그림">
+ <g fill="#f4f5f6" stroke="#2b2b2a" stroke-width="1.4" stroke-linejoin="round">
+  <path d="M150 66 L250 50 L250 80 L150 96 Z"/>
+  <path d="M150 104 L250 88 L248 158 L148 150 Z" fill="#fbe9e2"/>
+  <path d="M148 150 L248 166 L246 196 L146 186 Z"/>
+ </g>
+ <g stroke="#c0392b" stroke-width="2" fill="none">
+  <path d="M120 100.8 L330 67.2"/>
+  <path d="M120 145.5 L330 178.9"/>
+ </g>
+ <g stroke="#1f5fa8" stroke-width="2" stroke-dasharray="7 4" fill="none">
+  <path d="M244 42 L264 167"/>
+  <path d="M240 215 L266 52"/>
+ </g>
+ <path d="M240 116.7 a16 16 0 0 1 32 0" fill="none" stroke="#1f5fa8" stroke-width="1.6"/>
+ <text x="284" y="122" font-size="14" font-weight="700" fill="#1f5fa8">θ</text>
+ <g font-size="11.5">
+  <text x="338" y="66" fill="#c0392b" font-weight="700">① 위 추체의 하연에 직선</text>
+  <text x="338" y="184" fill="#c0392b" font-weight="700">② 아래 추체의 상연에 직선</text>
+  <text x="300" y="150" fill="#1f5fa8" font-weight="700">③ 두 직선에 각각 수직선</text>
+  <text x="300" y="166" fill="#1f5fa8">→ ④ 수직선이 만나는 각 θ 가 답</text>
+ </g>
+ <text x="24" y="24" font-size="11.5" fill="#6b6a66">국소 후만각 — 골절 추체의 바로 위·아래 추체를 기준으로 잡는다</text>
+</svg></div><div class="qtip"><span class="h">여기서 갈린다</span>두 각은 <b>"위 추체의 선 + 아래 추체의 선 → 두 수직선의 교차각"</b>이라는 구조가 똑같다. 다른 것은 둘뿐이다 — <b>어느 면에서 보는가</b>(콥스각은 정면, 국소후만각은 측면), <b>어느 추체를 잡는가</b>(콥스각은 만곡의 양 끝, 국소후만각은 골절 추체의 바로 위아래).</div></details></div>`},
 
       {h:"추간판탈출증과 신경근병증", freq:F(3,[47]),
        body:`<ul><li><b>방향별 빈도 — 후측방 &gt; 중앙 &gt; 내측 &gt; 측방</b></li>
@@ -4612,7 +4989,33 @@ const MED = {
        <div class="why"><span class="h">ICH — 외상성과 자발성의 감별 (44회 출제)</span>
        <b>외상성</b> — 모양이 매우 <b>불규칙</b>, 밀도가 <b>불균일</b>, <b>다발성</b>, <b>전두엽이나 측두엽 전방</b>에 호발(80~90%), 두개골 골절·두피 손상 등 외력의 흔적, 대측 충격 손상<br>
        <b>자발성</b> — 경계가 <b>분명한</b> 고밀도, <b>1~3개 이내</b>, <b>기저핵</b>이 가장 흔한 호발부위, 고혈압 병력<br>
-       이 감별이 곧 <b>보험사고 해당 여부</b>의 판단이다.</div>`,
+       이 감별이 곧 <b>보험사고 해당 여부</b>의 판단이다.</div><div class="qfig"><div class="qrd">기출 예상</div><div class="qt">두개강 내 출혈 — 어느 층에 고인 피인가</div><div class="qq">(1) ①~④ 출혈의 명칭을 쓰시오.<br>
+    (2) ①과 ②의 <b>손상 혈관</b>과 CT상 <b>모양</b>을 각각 쓰시오.<br>
+    (3) <b>의식명료기(lucid interval)</b>가 가장 특징적인 것은 몇 번인가?</div><svg viewBox="0 0 560 320" role="img" aria-label="두개강 내 출혈 문제 그림">
+ <ellipse cx="250" cy="160" rx="150" ry="128" fill="#f4f5f6" stroke="#2b2b2a" stroke-width="4"/>
+ <ellipse cx="250" cy="160" rx="136" ry="115" fill="#fff" stroke="#2b2b2a" stroke-width="1.1"/>
+ <ellipse cx="250" cy="160" rx="128" ry="107" fill="#eef0f2" stroke="#2b2b2a" stroke-width="1.3"/>
+ <path d="M250 54 V266" stroke="#2b2b2a" stroke-width="1.1" fill="none"/>
+ <path d="M126 96 q-34 62 0 126 q40 -62 0 -126 z" fill="#4a4a48"/>
+ <path d="M372 82 q46 76 4 154 q-18 -72 -4 -154 z" fill="#4a4a48" opacity=".85"/>
+ <g fill="#4a4a48">
+  <path d="M246 58 q4 40 0 76 q-8 -38 0 -76 z"/>
+  <path d="M254 58 q-4 40 0 76 q8 -38 0 -76 z"/>
+  <path d="M196 92 q14 16 10 32 q-18 -10 -10 -32 z"/>
+  <path d="M304 92 q-14 16 -10 32 q18 -10 10 -32 z"/>
+ </g>
+ <ellipse cx="300" cy="204" rx="34" ry="26" fill="#4a4a48"/>
+ <g stroke="#9aa3ad" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+  <path d="M110 158 H50"/><path d="M392 158 H452"/><path d="M250 70 H160 V44" opacity="0"/>
+  <path d="M258 96 H330 V60 H452"/><path d="M328 214 H452"/>
+ </g>
+ <g font-size="17" font-weight="700" fill="#c0392b">
+  <text x="26" y="164">①</text><text x="458" y="164">②</text><text x="458" y="66">③</text><text x="458" y="220">④</text>
+ </g>
+ <text x="24" y="24" font-size="11.5" fill="#6b6a66">머리를 위에서 자른 단면 (바깥부터 두개골 — 경막 — 뇌)</text>
+</svg><details class="ansbox"><summary>정답 보기</summary><div class="ansb"><b>(1)</b> ① 경막외출혈(EDH) ② 경막하출혈(SDH) ③ 지주막하출혈(SAH) ④ 뇌실질내출혈(ICH)<br>
+ <b>(2)</b> ① 경막외 — <b>중경막동맥</b>(동맥) 손상, CT에서 <b>볼록렌즈(양볼록·biconvex)</b> 모양, 봉합선을 넘지 않는다 / ② 경막하 — <b>교정맥(bridging vein)</b>(정맥) 손상, CT에서 <b>초승달(crescent)</b> 모양, 봉합선을 넘어 퍼진다<br>
+ <b>(3)</b> <b>①</b> 경막외출혈 — 수상 직후 잠깐 의식이 돌아왔다가 다시 나빠지는 의식명료기가 전형적이다.</div><div class="qtip"><span class="h">여기서 갈린다</span><b>동맥이면 볼록렌즈(경막외), 정맥이면 초승달(경막하)</b> — 이 한 쌍만 정확히 외우면 절반은 맞는다. 경막외는 빠르게 커져 응급수술, 경막하(특히 만성)는 고령·음주자에서 서서히 진행한다.</div></details></div>`,
        mnemo:{key:"외볼동 · 하초정 · 막망치 · 내기저", how:"<b>외</b>(경막외)는 <b>볼</b>록렌즈·<b>동</b>맥·골절 90%<br><b>하</b>(경막하)는 <b>초</b>승달·<b>정</b>맥(교정맥)<br>지주<b>막</b>하는 <b>망치</b>로 맞은 두통·동맥류<br>실질<b>내</b>는 자발성이면 <b>기저</b>핵, 외상성이면 전두·측두엽"}},
 
       {h:"뇌진탕 vs 뇌좌상, 의식 평가", freq:F(3,[45,48]),
