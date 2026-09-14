@@ -131,9 +131,19 @@
 
   .unitlist{display:flex; flex-direction:column; gap:2px; margin:14px 0 18px;}
   .unitlist button{
-    display:flex; align-items:center; gap:10px; width:100%; text-align:left;
+    display:grid; grid-template-columns:1.6em 1fr auto; align-items:center; gap:4px 10px; width:100%; text-align:left;
     padding:10px 12px; border:1px solid transparent; border-radius:8px; background:none;
     font-family:inherit; font-size:0.86rem; color:var(--ink2); cursor:pointer; font-weight:500;
+  }
+  .unitlist button > span:nth-child(2){min-width:0;}
+  .unitlist button .freq{grid-column:2; justify-self:start;}
+  .unitlist button .p27{grid-column:3; justify-self:end; margin-left:0;}
+  @media (max-width:560px){
+    .unitlist button{display:flex; flex-wrap:wrap; align-items:center; gap:5px 8px;}
+    .unitlist button .n{flex:0 0 1.4em;}
+    .unitlist button > span:nth-child(2){flex:1 1 100%; margin-left:1.9em; margin-top:-1.5em;}
+    .unitlist button .freq,.unitlist button .p27{margin-left:0;}
+    .unitlist button .freq{margin-left:1.9em;}
   }
   .unitlist button:hover{background:var(--sunk);}
   .unitlist button.active{background:var(--accent-soft); color:var(--accent-ink); font-weight:700; border-color:var(--border);}
@@ -306,6 +316,11 @@
 .qfig .asvg{margin-top:10px;border:1px solid var(--line);border-radius:6px;padding:8px;}
 .qfig .qtip{font-size:0.78rem;line-height:1.75;margin-top:8px;background:#f2f6fb;border:1px solid #cddcee;border-radius:6px;padding:10px 12px;}
 .qfig .qtip .h{display:block;font-weight:800;font-size:0.7rem;margin-bottom:3px;}
+
+.p27{display:inline-block;font-size:0.62rem;font-weight:800;padding:1px 6px;border-radius:9px;margin-left:4px;vertical-align:middle;white-space:nowrap;border:1px solid transparent;}
+.p27.p3{background:#fdece7;border-color:#e0b3a4;color:#a8412a;}
+.p27.p2{background:#fdf6e3;border-color:#ddc98d;color:#8a6a1a;}
+.p27.p1{background:#f1f1ef;border-color:#dfdeda;color:#7c7b76;}
 </style>
 
 <div class="wrap">
@@ -7317,7 +7332,28 @@ function freqBadge(f){
   const cls=f.n>=3?"f3":f.n===2?"f2":"f1";
   const stars="★".repeat(f.n)+"☆".repeat(3-f.n);
   const r=(f.rounds&&f.rounds.length)?" "+f.rounds.join("·")+"회":"";
-  return `<span class="freq ${cls}">${stars}${esc(r)}</span>`;
+  return `<span class="freq ${cls}">${stars}${esc(r)}</span>`+p27Badge(f);
+}
+/* 2027년(50회) 출제 가능성 — 41~49회 기출 770건 역검증에서 얻은 실측 확률표.
+   과거 출제율(rate)과 마지막 출제 이후 경과연수(gap) 두 변수만 사용한다. */
+const P27=[
+ {min:0.75, g:{1:70,2:60,3:55,4:50}},
+ {min:0.50, g:{1:50,2:35,3:35,4:40}},
+ {min:0.30, g:{1:25,2:20,3:30,4:40}},
+ {min:0.00, g:{1:20,2:20,3:30,4:25}}
+];
+function p27(rounds){
+  if(!rounds||!rounds.length) return null;
+  const uniq=[...new Set(rounds)].sort((a,b)=>a-b);
+  const rate=uniq.length/9, gap=Math.min(4,50-uniq[uniq.length-1]);
+  const row=P27.find(x=>rate>=x.min);
+  return row.g[gap]||row.g[4];
+}
+function p27Badge(f){
+  const v=p27(f.rounds);
+  if(v==null) return "";
+  const c=v>=50?"p3":v>=30?"p2":"p1";
+  return `<span class="p27 ${c}" title="41~49회 기출 770건 역검증 기반 추정치 — 예측이 아닌 통계적 참고값">27년 ${v}%</span>`;
 }
 
 /* ---------- capabilities ---------- */
@@ -7371,13 +7407,13 @@ function renderHome(el){
     <div class="card"><h3>이 노트를 쓰는 법</h3>
       <ul>
         <li><b>처음이라면 4교시 자동차보험 → 0단원부터</b> 순서대로 읽으세요. 용어 정리와 답안 형식이 먼저 나옵니다.</li>
-        <li><b>교재</b> — 제목 옆 <span class="freq f3">★★★</span> 배지는 44~49회 출제 빈도이고 숫자가 실제 출제 회차입니다. 초록 상자는 암기법, 파란 상자는 초보자 설명입니다.</li>
+        <li><b>교재</b> — 제목 옆 <span class="freq f3">★★★</span> 배지는 출제 빈도이고 숫자가 실제 출제 회차입니다. 그 옆 <span class="p27 p3">27년 70%</span> 는 <b>2027년(50회) 출제 가능성 추정치</b>입니다. 초록 상자는 암기법, 파란 상자는 초보자 설명입니다.</li><li><b>27년 %는 이렇게 계산했습니다</b> — 41~49회(2018~2026) 기출을 논점 단위로 분해해 <b>770건</b>을 만든 뒤, “과거에 이런 이력이던 논점이 실제로 그 다음 해에 몇 % 나왔는가”를 역으로 세었습니다. 쓰는 변수는 두 개뿐입니다 — <b>9년 중 몇 번 나왔는가</b>와 <b>마지막 출제 이후 몇 년 지났는가</b>. <span class="p27 p3">50%↑</span> 는 우선순위가 높다는 뜻이고, <span class="p27 p1">30%↓</span> 라고 버려도 된다는 뜻은 아닙니다.</li>
         <li><b>계산</b> — 기출 사례를 단계별로 푸는 곳입니다. <b>여기가 합격을 가릅니다.</b> 각 예제 끝에 자주 틀리는 함정이 정리돼 있습니다.</li>
         <li><b>암기카드</b> — 눌러서 뒤집고 안다/모른다를 체크하면 진도에 반영됩니다.</li>
         <li><b>예상문제</b> — 문항마다 <span class="lik l3">★★★ 기출가능성 높음</span> 배지가 붙어 있어 우선순위를 알 수 있습니다. 모범답안을 보고 스스로 채점합니다.</li>
       </ul>
     </div>
-    <div class="warn"><b>수치는 원문 대조 필수.</b> 약관 지급기준·한도·사고부담금 금액은 개정됩니다. 이 노트의 수치는 44~49회 기출 답안에서 실제 적용된 값이므로, 시험 전 최신 표준약관·자배법 시행령으로 반드시 확인하세요.</div>`;
+    <div class="warn"><b>27년 %는 예측이 아니라 추정치입니다.</b> 출제위원은 매년 바뀌고, 실제로 최근 3개년(47~49회)에는 9년간 선례가 없던 논점이 회차당 4~7개씩 나왔습니다. 이 숫자는 <b>공부 순서를 정하는 용도</b>이지 낮은 항목을 버리는 근거가 아닙니다.</div><div class="warn"><b>수치는 원문 대조 필수.</b> 약관 지급기준·한도·사고부담금 금액은 개정됩니다. 이 노트의 수치는 44~49회 기출 답안에서 실제 적용된 값이므로, 시험 전 최신 표준약관·자배법 시행령으로 반드시 확인하세요.</div>`;
 }
 
 /* ---------- subject ---------- */
